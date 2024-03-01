@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <math.h>
+#define EPS 1e-8
+#define PI (2.0 * asin(1.0))
+
+double distance(double x1, double y1, double x2, double y2)
+{
+    return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
+}
+
+int triangle_definition(double a, double b, double c)
+{
+    double angle_a, angle_b, angle_c;
+    
+    angle_a = acos((pow(b, 2) + pow(c, 2) - pow(a, 2)) / (2.0 * b * c)) * (180.0 / PI);
+    angle_b = acos((pow(a, 2) + pow(c, 2) - pow(b, 2)) / (2.0 * a * c)) * (180.0 / PI);
+    angle_c = acos((pow(a, 2) + pow(b, 2) - pow(c, 2)) / (2.0 * a * b)) * (180.0 / PI);
+    
+    if (fabs(angle_a - 90) < EPS || fabs(angle_b - 90) < EPS || fabs(angle_c - 90) < EPS)
+    {
+        return 1;
+    }
+    
+    if (angle_a > 90 || angle_b > 90 || angle_c > 90)
+    {
+        return 2;
+    }
+    
+    return 0;
+}
+
+int main()
+{
+    double xa, ya, xb, yb, xc, yc;
+
+    printf("Enter coordinates of A (xA, yA): ");
+    if (scanf("%lf%lf", &xa, &ya) != 2)
+    {
+        printf("Input error");
+        return 1;
+    }
+    printf("Enter coordinates of B (xB, yB): ");
+    if (scanf("%lf%lf", &xb, &yb) != 2)
+    {
+        printf("Input error");
+        return 2;
+    }
+    printf("Enter coordinates of C (xC, yC): ");
+    if (scanf("%lf%lf", &xc, &yc) != 2)
+    {
+        printf("Input error");
+        return 3;
+    }
+
+    double s = 0.5 * fabs((xb - xa) * (yc - ya) - (xc - xa) * (yb - ya));
+
+    if (s <= EPS)
+    {
+        printf("Треугольника не существует");
+        return 4;
+    }
+
+    double ab, bc, ca;
+    ab = distance(xa, ya, xb, yb);
+    bc = distance(xb, yb, xc, yc);
+    ca = distance(xc, yc, xa, ya);
+
+    int res = triangle_definition(ab, bc, ca);
+
+    printf("Res: %d", res);
+    return 0;
+}

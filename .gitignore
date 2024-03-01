@@ -1,0 +1,7 @@
+*.exe
+*.gcno
+*.gcda
+*.out
+*.o
+out.txt
+.vscode
