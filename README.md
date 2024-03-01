@@ -1,1 +1,1 @@
-# labs_c
+# C labs
