@@ -13,6 +13,19 @@ if [ ! -f "$2" ]; then
     exit 2
 fi
 
+if [ ! -r "$1" ]; then
+    if echo "$3" | grep -Eq "^-v$"; then
+        echo Нет доступа к файлу 1
+    fi
+    exit 2
+fi
+if [ ! -r "$2" ]; then
+    if echo "$3" | grep -Eq "^-v$"; then
+        echo Нет доступа к файлу 2
+    fi
+    exit 2
+fi
+
 file1=$1
 file2=$2
 

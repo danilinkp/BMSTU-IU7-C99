@@ -1,6 +1,8 @@
-#include <math.h>
 #include <stdio.h>
-#define EPS 1e-8
+#include <stdlib.h>
+
+#define NOT_VALID_V1_T1 1
+#define NOT_VALID_V2_T2 2
 
 int main(void)
 {
@@ -12,14 +14,14 @@ int main(void)
     if (scanf("%lf%lf", &v1, &t1) != 2 || v1 <= 0)
     {
         printf("Input error");
-        return 1;
+        return NOT_VALID_V1_T1;
     }
 
     printf("Enter v second and t second: ");
     if (scanf("%lf%lf", &v2, &t2) != 2 || v2 <= 0)
     {
         printf("Input error");
-        return 2;
+        return NOT_VALID_V2_T2;
     }
 
     v = v1 + v2;
@@ -27,6 +29,6 @@ int main(void)
 
     printf("Volume is: %.6lf\n", v);
     printf("Temperature is: %.6lf\n", t);
-    
-    return 0;
+
+    return EXIT_SUCCESS;
 }

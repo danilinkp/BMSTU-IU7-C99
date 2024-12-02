@@ -1,0 +1,1 @@
+fb ./func_tests/daaaaaaneg_04_in.bin kkk Bel

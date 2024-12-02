@@ -1,0 +1,9 @@
+4
+MilkWithFruitsAndSomeBerries
+60
+Banana
+100
+Bread
+50
+Eggs
+120

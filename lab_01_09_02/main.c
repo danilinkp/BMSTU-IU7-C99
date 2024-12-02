@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <math.h>
-
+#include <stdlib.h>
 
 double g(void)
 {
@@ -28,15 +28,13 @@ double g(void)
     return s;
 }
 
-
-
 int main(void)
 {
     double res = g();
 
     if (res < 0)
-        return 1;
+        return EXIT_FAILURE;
 
     printf("Result: %.6lf", res);
-    return 0;
+    return EXIT_SUCCESS;
 }

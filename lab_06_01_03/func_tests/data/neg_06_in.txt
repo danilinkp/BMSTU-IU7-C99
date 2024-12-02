@@ -1,0 +1,9 @@
+4
+Milk
+50
+Banana
+-50
+Bread
+50
+Eggs
+120

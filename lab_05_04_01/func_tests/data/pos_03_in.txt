@@ -1,0 +1,9 @@
+Sidorov
+Evgeniy
+5 5 5 3
+Ivanov
+Ivan
+3 4 5 1
+Ivanov
+Alexey
+3 4 5 2

@@ -1,0 +1,5 @@
+Result: Hello no
+Result: i no
+Result: student yes
+Result: and no
+Result: you no

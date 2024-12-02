@@ -1,5 +1,8 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
+#define ERROR_X 1
+#define ERROR_EPS 2
 
 double f(double x)
 {
@@ -41,14 +44,14 @@ int main(void)
     if (scanf("%lf", &x) != 1)
     {
         printf("Not valid x");
-        return 1;
+        return ERROR_X;
     }
 
     printf("Input eps: ");
     if (scanf("%lf", &eps) != 1 || eps <= 0 || eps > 1)
     {
         printf("Not valid eps");
-        return 2;
+        return ERROR_EPS;
     }
     
     f_x = f(x);
@@ -61,5 +64,5 @@ int main(void)
     printf("Absolute error: %.6lf\n", d_a);
     printf("Relative error: %.6lf\n", d_r);
 
-    return 0;
+    return EXIT_SUCCESS;
 }
